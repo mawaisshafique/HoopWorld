@@ -2,12 +2,23 @@
   "name": "Hoop World",
   "short_name": "Hoop World",
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "ms_start_compatible": true,
+  "id": "TapNationSAS.HoopWorld",
+    "ms_start_compatible": true,
+    "publisher": "TapNation SAS",
+    "dir": "auto",
+    "orientation": "any",
+    "version": "1.0.0",
+    "categories": [
+        "games"
+    ],
+   "launch_handler": {
+        "client_mode": "auto"
+    },
   "icons": [
     { "src": "icon-1920x1080.png", "sizes": "1920x1080", "type": "image/png" },
-    { "src": "icon-512x512.png",  "sizes": "512x512",  "type": "image/png", "purpose": "any maskable" }
+    { "src": "icon-512x512.png",  "sizes": "512x512",  "type": "image/png" }
   ]
 }

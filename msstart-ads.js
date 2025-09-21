@@ -28,14 +28,21 @@
 
     async function showInterstitial() {
         if (!interstitial) { console.warn("[MSStart] Interstitial not loaded"); return; }
+
+        send("MuteAudio");
+        
         try {
             const ad = await sdk().showAdsAsync(interstitial.instanceId);
             await ad.showAdsCompletedAsync;
             console.log("[MSStart] Interstitial completed");
-            loadInterstitial(); // reload for next use
         } catch (e) {
             console.warn("[MSStart] Interstitial show error", e);
             // No Unity callback needed here typically, but you can add one if desired
+        }
+        finally {
+            // Always unmute and queue next load
+            send("UnmuteAudio");
+            loadInterstitial();
         }
     }
 
